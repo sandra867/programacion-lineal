@@ -1,0 +1,162 @@
+% Created 2020-02-26 mié 09:49
+% Intended LaTeX compiler: pdflatex
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\author{Licenciatura en Matemáticas Aplicadas, UAEH}
+\date{24 de febrero de 2020}
+\title{Primer Examen de Programación Lineal}
+\hypersetup{
+ pdfauthor={Licenciatura en Matemáticas Aplicadas, UAEH},
+ pdftitle={Primer Examen de Programación Lineal},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.2 (Org mode 9.3.5)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\textbf{NOMBRE:}
+\hrulefill
+
+\medskip
+
+\textbf{INSTRUCCIONES:} Hay 6 preguntas en este examen, debes escoger cinco
+de ellas, marcando algún modo claro e inequívoco las preguntas
+escogidas. Recuerda explicar sin escatimar en detalles las respuestas
+a las preguntas. Tienes 1 hora y 50 minutos para resolverlo.
+
+\begin{enumerate}
+\item Resuelve el siguiente problema:
+\begin{equation*}
+\begin{aligned}
+\text{Maximizar} \quad & x+3y\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   3x+y &\leq 6\\
+   x,y &\geq  0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+\item Resuelve el siguiente problema 
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 3x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   x_{1} &\leq 5\\
+   x_{2} &\leq 4\\
+   x_{1}-x_{2} &\leq 3\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+\item Resuelve el siguiente problema 
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   x_{1}-x_{2} &\leq 2\\
+   -2x_{1}+x_{2} &\leq 2\\
+   3x_{1}+4x_{2} &\leq 12\\
+   x_{1}+x_{2} &\geq 1\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+\item Escribe el siguiente problema en forma estándar y en forma simplex
+(No es necesario resolverlo)
+\begin{equation*}
+\begin{aligned}
+\text{Minimizar} \quad & x_{1}-x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   3x_{1}-x_{2} & \geq 3\\
+   x_{1}+x_{2} &\geq -8\\
+   x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+\item Una compañía mueblera fabrica tres tipos de libreros: el
+\guillemotleft{}intelectual\guillemotright{}, el \guillemotleft{}juvenil\guillemotright{}, y el \guillemotleft{}ejecutivo\guillemotright{}. Cada librero es
+elaborado utilizando tres tipos de madera: roble, pino y caoba. El
+librero tipo \guillemotleft{}intelectual\guillemotright{} requiere 2 unidades cuadradas de hoja de
+roble, 6 de pino y 4 de caoba. El librero tipo \guillemotleft{}juvenil\guillemotright{} requiere
+respectivamente 1, 4 y 3 unidades cuadradas de hoja de roble, pino
+y caoba. Y el librero tipo \guillemotleft{}ejecutivo\guillemotright{} requiere respectivamente 2,
+2 y 8 unidades cuadradas de hoja de pino, roble y caoba.
+
+La ganancia por librero vendido de los tipos \guillemotleft{}intelectual\guillemotright{},
+\guillemotleft{}juvenil\guillemotright{} y \guillemotleft{}ejecutivo\guillemotright{} es respectivamente de \$20, \$5 y
+\$30. Suponiendo que la compañía dispone en sus bodegas de 100
+unidades cuadradas de hoja de roble, 600 unidades de pino y 320
+unidades de caoba, plantea el problema de encontrar la producción
+que maximice el ingreso como un problema de programación lineal.
+
+Solucion: vamos a usar variables $x _1$,$x _2$, $x _3$ donde:
+$x _1$ reperesenta la cantidad de libreros tipo inelectual
+$x _2$ representa la cantidad de libreros tipo juvenil y
+$x _3$ representa la cantidad de libreros tipo ejecutivo.
+
+con base a los datos la ganancia $x _1$,$x _2$,$ x _3$, 
+esta dada  por: $20x _1+5x _2+30x _3$, cada tipo de madera nos da una
+restricción. por ejemplo, los datos respecto al roble  nos dice que:
+$2x _1+x _2+2x _3\leq 100$. considerando el pin, tentemos que :
+$6x _1+4x _2+2x _3\leq 600$. finalmente, respecto a la caoba,
+tenemos que :$4x _1+3x _2+8x _3\leq 320$.
+Es decir, como un problema de programacion lineal queda:
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 20x_{1}+5x_{2}+30x_{3}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+    2x_{1}+x_{2}+2x_{3} &\leq 100\\
+    6x_{1}+4x_{2}+2x_{3} &\leq 600\\
+    4x_{1}+3x_{2}+8x_{3} &\leq 320\\
+     x_{1},x_{2},x_{3} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+\item Supongamos que un estudio ha demostrado que la demanda de autobuses
+en cierta ciudad con respecto a la hora del día está regida por la
+siguiente tabla:
+\begin{center}
+\begin{tabular}{lr}
+Hora & Cantidad de autobuses\\
+\hline
+12am-4am & 4\\
+4am-8am & 8\\
+8am-12pm & 15\\
+12pm-4pm & 10\\
+4pm-8pm & 17\\
+8pm-12am & 5\\
+\end{tabular}
+\end{center}
+Supongamos que un autobús debe operar exactamente ocho horas
+consecutivas, y que operan en turnos empezando cada cuatro horas a
+partir de las 12am. Plantea el problema de encontrar la cantidad
+mínima de autobuses que deben adquirirse para cubrir la
+demanda como un problema de programación lineal.
+\end{enumerate}
+\end{document}
