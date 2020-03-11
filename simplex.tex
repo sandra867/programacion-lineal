@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{El Metodo Simplex}
+\author{Sandra y Ana}
+\begin{document}
+\maketitle
+
+ 
+\section{Introduccion}
+\label{sec:introduccion}
+
+El metodo simplex es un algoritmo para resolver porblemas de progrmacion
+lineal.Fue inventado por George Dantzing en el año 1947.
+
+\section{ejemplo}
+\label{sec:ejemplo}
+
+Ilustraremos la aplicacion del metodo simplex con un ejemplo.
+ 
+ \begin{equation*} \begin{aligned} \text{Maximizar} \quad & 2x1+x2\\
+     \text{sujeto a} \quad &
+     \begin{aligned}
+       x1-x2+x3 &= 2\\
+       -2x1+x2+x4&=3\\
+       3x1+4x2+x5&=12\\
+       x1+x2+x6 &=1\\
+       x1,x2,x3,x4,x5,x6 &\geq 0
+     \end{aligned} \end{aligned} \end{equation*}
+
+como en una de las desigualdades aparecen las variables del lado
+izquierdo de un simbolo $\geq$, multiplicamos ambos miembros de esa
+desigualdad por $-1$ para obtener la forma estandar
+ \begin{equation*} \begin{aligned} \text{Maximizar} \quad & 2x1+x2\\
+     \text{sujeto a} \quad &
+     \begin{aligned}
+       x1-x2+x3 &= 2\\
+       -2x1+x2+x4&=2\\
+       3x1+4x2+x5&=12\\
+       x1+x2+x6 &=1\\
+       x1,x2,x3,x4,x5,x6 &\geq 0
+     \end{aligned} \end{aligned} \end{equation*}
+para obtener la forma simplex, añadimos una variable de holgura por
+cada desigualdad
+
+ \begin{equation*} \begin{aligned} \text{Maximizar} \quad & 2x1+x2\\
+     \text{sujeto a} \quad &
+     \begin{aligned}
+       x1-x2+x3 &= 2\\
+       -2x1+x2+x4&=2\\
+       3x1+4x2+x5&=12\\
+       x1+x2+x6 &=1\\
+       x1,x2,x3,x4,x5,x6 &\geq 0
+     \end{aligned} \end{aligned} \end{equation*}
+
+A continuacion obtenemos un tablero simplex despejando las variables
+de holgura
+ \begin{equation*} \begin{aligned} \text{Maximizar} \quad & 2x1+x2\\
+     \text{sujeto a} \quad &
+     \begin{aligned}
+       x3 &= 2+x2-x1\\
+       x4&=2+2x1-x2\\
+       x5&=12-3x1-4x2\\
+       x6 &=1-x1-x2\\
+       \hline
+       z&=\phantom{-1}-2x1
+     \end{aligned} \end{equation*}
+
+
+\end{document}
